@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "Hello World",
+    "description": "A basic Hello World extension!",
+    "version": "1.0",
+    "author": "Wolfgang",
+    "applications": {
+        "gecko": {
+            "id": "helloworld@illmeyer.com",
+            "strict_min_version": "78.0",
+            "strict_max_version": "78.*"
+        }
+    },
+    "icons": {
+        "64": "images/icon-64px.png",
+        "32": "images/icon-32px.png",
+        "16": "images/icon-16px.png"
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "options_ui": {
+      "page": "options/options.html",
+      "open_in_tab": false,
+      "browser_style": true
+    },
+    "permissions": [
+      "storage",
+      "messagesMove",
+      "messagesRead",
+      "accountsRead",
+      "accountsFolders"
+    ]
+}
