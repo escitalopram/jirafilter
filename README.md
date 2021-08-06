@@ -1,6 +1,6 @@
 A thunderbird plugin that separates interesting mails out of the Jira spam.
 
-Interesting emails are contain notifications about:
+Interesting emails contain notifications about:
 - status set to Done
 - ticket assigned to the user
 - priority set to High/Highest
