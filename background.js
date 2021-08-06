@@ -1,3 +1,22 @@
+var waitPeriod = 14400000;
+var runinfo = {
+	lastStart : null,
+	lastFinish : null
+}
+
+function nonReentrantStarter() {
+	if (runinfo.lastStart !== null && runinfo.lastFinish === null) {
+		if (Date.now() - runinfo.lastStart < runinfo.waitPeriod) {
+			return;
+		} else {
+			console.warn("Mailfilter: did not finish for a long period. Assuming crash and restarting.");
+		}
+	}
+	runinfo.lastStart = Date.now();
+	runinfo.lastFinish = null;
+	doFilter();
+}
+
 function findFolder(folders, path) {
 	var todo = [];
 	if (folders) {
@@ -111,8 +130,9 @@ async function doFilter() {
 	assignment.reject.forEach(async x=>await browser.messages.update(x, {read: true}));
 	await browser.messages.move(assignment.reject, rejFolder);
 	assignment.accept.forEach(async x=>await browser.messages.update(x, {flagged: true}));
+	runinfo.lastFinish = Date.now();
 }
 
 
 
-setInterval(doFilter, 5000);
+var interval = setInterval(nonReentrantStarter, 10000);
