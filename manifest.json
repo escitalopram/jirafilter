@@ -1,12 +1,12 @@
 {
     "manifest_version": 2,
-    "name": "Hello World",
-    "description": "A basic Hello World extension!",
+    "name": "Nexxar Jira Mail Filter for Wolfgang Illmeyer",
+    "description": "An extension that filters the Jira Spam in order to extract and highlight the important messages",
     "version": "1.0",
-    "author": "Wolfgang",
+    "author": "Wolfgang Illmeyer",
     "applications": {
         "gecko": {
-            "id": "helloworld@illmeyer.com",
+            "id": "jiraspam@illmeyer.com",
             "strict_min_version": "78.0",
             "strict_max_version": "78.*"
         }
