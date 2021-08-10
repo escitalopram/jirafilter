@@ -3,7 +3,7 @@ A thunderbird plugin that separates interesting mails out of the Jira spam.
 Interesting emails contain notifications about:
 - status set to Done
 - ticket assigned to the user
-- priority set to High/Highest
+- priority set to High/Highest/Blocker
 - something was shared with the user
 - mentions of the user
 

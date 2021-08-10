@@ -74,7 +74,8 @@ async function filterFull(msg) {
 	var newassigned = body.match(/<tr>\s*<th [^>]*>Assignee:<\/th>\s*<td [^>]*>\s*<a [^>]*>Wolfgang Illmeyer<\/a>\s<\/td>\s*<\/tr>/);
 	var done = body.match(/<tr>\s*<th [^>]*>(Epic )?Status:<\/th>\s*<td [^>]*> <span [^>]*class="diffremovedchars".*>[^<]+<\/span>\s*<span [^>]*class="diffaddedchars"[^>]*>Done<\/span>\s*<\/td>\s*<\/tr>/);
 	var priotopchange = body.match(/<tr>\s*<th [^>]*">Priority:<\/th>\s*<td [^>]*>\s*<span class="diffremovedchars"[^>]*>[^<]*<\/span> <span class="diffaddedchars"[^>]*>High[^<]*<\/span>\s*<\/td>\s*<\/tr>/);
-	if (reassigned || newassigned || done || priotopchange) {
+	var prioblockerchange = body.match(/<tr>\s*<th[^>]*>Priority:<\/th>\s*<td[^>]*>\s*<img[^>]*>\s*Blocker\s*<\/td>\s*<\/tr>/);
+	if (reassigned || newassigned || done || priotopchange || prioblockerchange) {
 		return true;
 	}
 	// console.log({reassigned: !!reassigned, newassigned: !!newassigned, done: !!done, priotopchange: !!priotopchange});
