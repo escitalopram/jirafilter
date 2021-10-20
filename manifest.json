@@ -2,13 +2,13 @@
     "manifest_version": 2,
     "name": "Nexxar Jira Mail Filter for Wolfgang Illmeyer",
     "description": "An extension that filters the Jira Spam in order to extract and highlight the important messages",
-    "version": "1.0",
+    "version": "1.0.1",
     "author": "Wolfgang Illmeyer",
     "applications": {
         "gecko": {
             "id": "jiraspam@illmeyer.com",
             "strict_min_version": "78.0",
-            "strict_max_version": "78.*"
+            "strict_max_version": "91.*"
         }
     },
     "icons": {
